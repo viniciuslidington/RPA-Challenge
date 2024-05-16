@@ -7,12 +7,17 @@ navegador = webdriver.Chrome()
 navegador.get("https://www.rpachallenge.com/")
 time.sleep(1)
 navegador.find_element("xpath","/html/body/app-root/div[2]/app-rpa1/div/div[1]/div[6]/a").click()
+
+#baixar o arquivo e salvar diretamento no PATH para abrir automaticamente
 time.sleep(1)
 navegador.find_element("xpath","/html/body/app-root/div[2]/app-rpa1/div/div[1]/div[6]/button").click()
 
 tabela = pd.read_excel("challenge.xlsx")
 
+
+#criar def para função
 #loop para capturar as informações da tabela
+
 for i, first_name in enumerate(tabela['First Name']):
     last_name = tabela.loc[i, 'Last Name ']
     company_name = tabela.loc[i, 'Company Name']
@@ -37,3 +42,6 @@ for i, first_name in enumerate(tabela['First Name']):
     navegador.find_element(By.CSS_SELECTOR, '[ng-reflect-name="labelFirstName"]').send_keys(first_name)
     #Enviar formulário
     navegador.find_element(By.XPATH, '/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/input').click()
+
+time.sleep(5)
+navegador.quit()
