@@ -57,6 +57,7 @@ navegador = webdriver.Chrome(service=service, options=chrome_options)
 navegador.get("https://www.rpachallenge.com/")
 time.sleep(2)
 navegador.find_element("xpath", "/html/body/app-root/div[2]/app-rpa1/div/div[1]/div[6]/a").click()
+time.sleep(3)
 
 file_name = "challenge.xlsx"
 file_path = os.path.join(download_path, file_name)
