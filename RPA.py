@@ -26,16 +26,12 @@ for package in packages:
 
 #importar bibliotecas
 from selenium import webdriver
-import chromedriver_autoinstaller
 from selenium.webdriver.common.by import By
 import pandas as pd
 import time
 import os
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-
-#baixar o chrome drive automaticamente
-chromedriver_autoinstaller.install()
 
 #acessar o diretorio
 download_path = os.getcwd()
